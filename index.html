@@ -495,11 +495,11 @@
             button.addEventListener("click", () => {
                 if (button.textContent === "Copy") {
                     if (copied.includes(button.closest(".card").querySelector("h2").textContent)) {
-                        notify("You have already copied this number");
+                        alert("You have already copied this number");
                         return;
                     } else {
                         copied.push(button.closest(".card").querySelector("h2").textContent);
-                        notify(button.closest(".card").querySelector("h2").textContent);
+                        alert(button.closest(".card").querySelector("h2").textContent);
 
                         copy.textContent = Number(copy.textContent) + 1;
                     }
@@ -508,7 +508,7 @@
                     const header = card.querySelector("h2");
                     const header2 = card.querySelector("h3");
                     const p = card.querySelector("p");
-                    notify("Calling " + p.textContent + " at " + header2.textContent + "...");
+                    alert("Calling " + p.textContent + " at " + header2.textContent + "...");
 
                     const time = new Date();
                     const times = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
@@ -530,7 +530,7 @@
 
                     total_coins.textContent = Number(total_coins.textContent) - 20;
                 } else {
-                    notify("Not enough coins");
+                    alert("Not enough coins");
                 }
             })
         });
